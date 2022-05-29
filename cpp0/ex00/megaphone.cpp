@@ -6,19 +6,19 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 17:49:06 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/05/28 18:19:05 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/05/29 08:59:52 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-void	to_upper(char *s) {
+void	put_toupper(char *s) {
 	size_t	i;
 
 	i = 0;
 	while (i < strlen(s))
 	{
-		s[i] = toupper(s[i]);
+		std::cout << (char) toupper(s[i]);
 		i++;
 	}
 }
@@ -34,8 +34,7 @@ int	main(int argc, char **argv) {
 	i = 1;
 	while (i < argc)
 	{
-		to_upper(argv[i]);
-		std::cout << argv[i];
+		put_toupper(argv[i]);
 		i++;
 	}
 	std::cout << std::endl;
