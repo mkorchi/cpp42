@@ -6,16 +6,14 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 18:18:07 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/05/29 15:42:46 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/05/30 21:48:18 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.class.hpp"
-
-#include <fstream>
 #include <iostream>
 #include <string>
-#include <iomanip> 
+#include <iomanip>
 
 void	addCalled(PhoneBook& phoneBook) {
 	Contact contact;
@@ -40,14 +38,19 @@ void	addCalled(PhoneBook& phoneBook) {
 void	printColumn(std::string str) {
 	std::cout.flags (std::ios::right);
 	std::cout.width(10);
-	std::cout << str << "|";
+	if (str.length() > 10) {
+		str = str.substr(0, 10);
+		str[9] = '.';
+		std::cout << str << "|";
+	} else {
+		std::cout << str << "|";
+	}
 }
 
-void	searchCalled(PhoneBook& PhoneBook)
-{
+void	searchCalled(PhoneBook& PhoneBook) {
+
 	int	i;
 
-	//std::cout << "     index|" << "first name|" << " last name|" << "  nickname" << std::endl;
 	printColumn("index");
 	printColumn("first name");
 	printColumn("last name");
@@ -62,6 +65,14 @@ void	searchCalled(PhoneBook& PhoneBook)
 		printColumn(PhoneBook.contacts[i].nickName);
 		std::cout << std::endl;
 		i++;
+	}
+	std::cout << "Enter an index: " << std::endl;
+	std::cin >> i;
+	if (i < 0 || i > 8 || PhoneBook.contacts[i].firstName.empty()) {
+		std::cout << "Index you just entered is either wrong or out of range" << std::endl;
+	} else {
+		Contact contact = PhoneBook.contacts[i];
+		contact.displayInfo();
 	}
 }
 
@@ -80,7 +91,6 @@ int	main() {
 			searchCalled(phoneBook);
 		}
 		else if (input.compare("EXIT") == 0) {
-			std::cout << "EXIT" << std::endl;
 			break ;
 		}
 	}

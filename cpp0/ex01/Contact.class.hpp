@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 19:35:03 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/05/29 12:26:30 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/05/30 21:32:21 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 # define CONTACT_CLASS_HPP
 
-#include <string>
+# include <string>
+# include <iostream>
 
 class Contact
 {
 
 public:
 	Contact( void );
-	Contact( std::string first, std::string last, std::string nick, std::string phone, std::string dark);
 	~Contact();
 
 	std::string	firstName;
@@ -29,6 +29,8 @@ public:
 	std::string	nickName;
 	std::string phoneNumber;
 	std::string darkestSecret;
+
+	void displayInfo();
 	
 };
 
