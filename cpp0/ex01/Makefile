@@ -1,6 +1,6 @@
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = main
+NAME = phonebook
 
 SRC = main.cpp PhoneBook.class.cpp Contact.class.cpp
 

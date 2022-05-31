@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 20:13:21 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/05/30 21:43:32 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/05/31 11:53:10 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 
 Contact::Contact( void ) {
-	//std::cout << "Constructor called" << std::endl;
+std::cout << "Contact Constructor called" << std::endl;
 }
 
 Contact::~Contact ( void ) {
-	//std::cout << "Destructor called" << std::endl;
+	std::cout << "Contact Destructor called" << std::endl;
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 18:18:07 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/05/30 21:48:18 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/05/31 12:24:45 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	printColumn(std::string str) {
 	}
 }
 
-void	searchCalled(PhoneBook& PhoneBook) {
+void	searchCalled(PhoneBook& phoneBook) {
 
 	int	i;
 
@@ -58,22 +58,23 @@ void	searchCalled(PhoneBook& PhoneBook) {
 	std::cout << std::endl;
 	i = 0;
 	std::cout.flags (std::ios::right);
-	while (i < 8 && !PhoneBook.contacts[i].firstName.empty()) {
+	while (i < 8 && !phoneBook.contacts[i].firstName.empty()) {
 		printColumn(std::to_string(i));
-		printColumn(PhoneBook.contacts[i].firstName);
-		printColumn(PhoneBook.contacts[i].lastName);
-		printColumn(PhoneBook.contacts[i].nickName);
+		printColumn(phoneBook.contacts[i].firstName);
+		printColumn(phoneBook.contacts[i].lastName);
+		printColumn(phoneBook.contacts[i].nickName);
 		std::cout << std::endl;
 		i++;
 	}
 	std::cout << "Enter an index: " << std::endl;
-	std::cin >> i;
-	if (i < 0 || i > 8 || PhoneBook.contacts[i].firstName.empty()) {
-		std::cout << "Index you just entered is either wrong or out of range" << std::endl;
-	} else {
-		Contact contact = PhoneBook.contacts[i];
-		contact.displayInfo();
-	}
+	if (std::cin >> i) {
+		if (i < 0 || i > 8 || phoneBook.contacts[i].firstName.empty()) {
+			std::cout << "Index you just entered is either wrong or out of range" << std::endl;
+		} else {
+			phoneBook.contacts[i].displayInfo();
+		}
+	} else
+		std::cin.ignore(INT_MAX);
 }
 
 int	main() {

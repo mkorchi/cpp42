@@ -1,38 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 18:12:40 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/05/31 11:53:02 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/05/31 12:48:21 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/05/31 12:48:37 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-
-# define PHONEBOOK_CLASS_HPP
-
-# include "Contact.class.hpp"
-
-class PhoneBook {
-	
-public:
-	PhoneBook( void );
-	~PhoneBook();
-
-	Contact	contacts[8];
-
-	void addContact(Contact &contact);
-
-	
-private:
-	static int	_position;
-};
-
-
-
-
-
-#endif
+#include "Account.hpp"
