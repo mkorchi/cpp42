@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   Example.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 18:12:40 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/01 09:19:09 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/01 11:14:02 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/01 11:15:07 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
+#include "Example.hpp"
 
-# define PHONEBOOK_CLASS_HPP
+Example::Example() {
 
-# include "Contact.class.hpp"
+}
 
-class PhoneBook {
-	
-public:
-	PhoneBook(void);
-	~PhoneBook();
+Example::~Example() {
 
-	void addContact(void);
-	void printList(void);
-	void search(void);
+}
 
-	
-private:
-	Contact	contacts[8];
-	static int	_len;
-};
-
-
-
-
-
-#endif
+Example::Example(int n) {
+	this->nbr = n;
+}

@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   Example.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 18:12:40 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/01 09:19:09 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/01 11:12:16 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/01 11:16:27 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
+#ifndef EXAMPLE_HPP
 
-# define PHONEBOOK_CLASS_HPP
+# define EXAMPLE_HPP
 
-# include "Contact.class.hpp"
-
-class PhoneBook {
+class Example {
+	public:
+		
+		~Example(void);
+		Example(int a);
+		int nbr;
+		Example(void);
 	
-public:
-	PhoneBook(void);
-	~PhoneBook();
-
-	void addContact(void);
-	void printList(void);
-	void search(void);
-
-	
-private:
-	Contact	contacts[8];
-	static int	_len;
 };
-
-
-
 
 
 #endif
