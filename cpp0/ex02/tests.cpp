@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 12:46:22 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/01 16:57:12 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/01 19:58:04 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ int		main( void ) {
 		(*(it.first)).makeWithdrawal( *(it.second) );
 	}
 
-	// Account::displayAccountsInfos();
-	// std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	Account::displayAccountsInfos();
+	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
 	return 0;
 }
