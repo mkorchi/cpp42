@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 19:35:03 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/05/31 11:53:07 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/02 08:58:57 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/02 09:01:26 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
+#ifndef PHONEBOOK_HPP
 
-# define CONTACT_CLASS_HPP
+# define PHONEBOOK_HPP
 
-# include <string>
-# include <iostream>
+# include "Contact.hpp"
 
-class Contact
-{
-
-public:
-	Contact( void );
-	~Contact();
-
-	std::string	firstName;
-	std::string	lastName;
-	std::string	nickName;
-	std::string phoneNumber;
-	std::string darkestSecret;
-
-	void displayInfo();
+class PhoneBook {
 	
+public:
+	PhoneBook( void );
+	~PhoneBook( void );
+
+	void addContact( void );
+	void printList( void );
+	void search( void );
+
+	
+private:
+	Contact	contacts[8];
+	static int	_len;
+	static void	printColumn( std::string str );
 };
 
 

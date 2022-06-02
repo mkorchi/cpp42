@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 18:12:37 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/01 11:48:41 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/02 08:58:46 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/02 09:03:07 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.class.hpp"
+#include "PhoneBook.hpp"
 #include <iostream>
 
 PhoneBook::PhoneBook( void ) {
@@ -44,7 +44,7 @@ void PhoneBook::addContact() {
 	PhoneBook::_len++;
 }
 
-void	printColumn(std::string str) {
+void	PhoneBook::printColumn( std::string str ) {
 	std::cout.flags (std::ios::right);
 	std::cout.width(10);
 	if (str.length() > 10) {
@@ -59,18 +59,18 @@ void	printColumn(std::string str) {
 void PhoneBook::printList() {
 	int	i;
 	
-	printColumn("index");
-	printColumn("first name");
-	printColumn("last name");
-	printColumn("nickname");
+	PhoneBook::printColumn("index");
+	PhoneBook::printColumn("first name");
+	PhoneBook::printColumn("last name");
+	PhoneBook::printColumn("nickname");
 	std::cout << std::endl;
 	i = 0;
 	std::cout.flags (std::ios::right);
 	while (i < PhoneBook::_len && i < 8) {
-		printColumn(std::to_string(i));
-		printColumn(this->contacts[i].firstName);
-		printColumn(this->contacts[i].lastName);
-		printColumn(this->contacts[i].nickName);
+		PhoneBook::printColumn(std::to_string(i));
+		PhoneBook::printColumn(this->contacts[i].firstName);
+		PhoneBook::printColumn(this->contacts[i].lastName);
+		PhoneBook::printColumn(this->contacts[i].nickName);
 		std::cout << std::endl;
 		i++;
 	}

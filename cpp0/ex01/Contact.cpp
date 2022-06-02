@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 20:13:21 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/05/31 11:53:10 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/02 08:57:05 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/02 08:57:48 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
-
-
+#include "Contact.hpp"
 
 Contact::Contact( void ) {
 std::cout << "Contact Constructor called" << std::endl;

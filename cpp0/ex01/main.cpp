@@ -6,11 +6,11 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 18:18:07 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/01 09:13:22 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/02 08:58:11 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.class.hpp"
+#include "PhoneBook.hpp"
 #include <iostream>
 #include <string>
 #include <iomanip>
