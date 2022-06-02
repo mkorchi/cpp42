@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 08:58:57 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 10:30:50 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/02 09:27:14 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/02 11:49:12 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
+#include "Zombie.hpp"
+#include <iostream>
 
-# define PHONEBOOK_HPP
-
-# include "Contact.hpp"
-
-class PhoneBook {
+Zombie::Zombie( void ) {
 	
-	public:
-		PhoneBook( void );
-		~PhoneBook( void );
+}
 
-		void addContact( void );
-		void printList( void );
-		void search( void );
+Zombie::Zombie( std::string newName ) {
+	this->_name = newName;
+}
 
-		
-	private:
-		Contact	contacts[8];
-		static int	_len;
-		static void	printColumn( std::string str );
-};
+Zombie::~Zombie( void ) {
+	std::cout << this->_name << " destructed" << std::endl;
+}
 
-
-
-#endif
+void	Zombie::announce( void ) {
+	std::cout << this->_name << ": " << "BraiiiiiiinnnzzzZ..." << std::endl;
+}

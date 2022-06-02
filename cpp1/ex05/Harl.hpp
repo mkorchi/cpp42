@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 08:58:57 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 10:30:50 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/02 18:14:36 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/02 18:37:59 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
+#ifndef HARL_HP
 
-# define PHONEBOOK_HPP
+# define HARL_HP
 
-# include "Contact.hpp"
+#include <string>
 
-class PhoneBook {
-	
-	public:
-		PhoneBook( void );
-		~PhoneBook( void );
-
-		void addContact( void );
-		void printList( void );
-		void search( void );
-
-		
+class Harl {
 	private:
-		Contact	contacts[8];
-		static int	_len;
-		static void	printColumn( std::string str );
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+	public:
+		Harl( void );
+		~Harl( void );
+		void	complain( std::string  level);
 };
+
 
 
 

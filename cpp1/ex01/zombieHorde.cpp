@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 08:58:57 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 10:30:50 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/02 09:54:42 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/02 10:09:54 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-# define PHONEBOOK_HPP
-
-# include "Contact.hpp"
-
-class PhoneBook {
+Zombie* zombieHorde( int N, std::string name ) {
+	Zombie *zombies = new Zombie[N];
 	
-	public:
-		PhoneBook( void );
-		~PhoneBook( void );
-
-		void addContact( void );
-		void printList( void );
-		void search( void );
-
-		
-	private:
-		Contact	contacts[8];
-		static int	_len;
-		static void	printColumn( std::string str );
-};
-
-
-
-#endif
+	int	i = 0;
+	while (i < N) 
+		zombies[i++].setName(name);
+	return zombies;
+}

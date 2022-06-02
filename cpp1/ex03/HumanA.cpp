@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 08:58:57 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 10:30:50 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/02 10:27:06 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/02 11:52:08 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
+#include "HumanA.hpp"
+#include <iostream>
 
-# define PHONEBOOK_HPP
-
-# include "Contact.hpp"
-
-class PhoneBook {
-	
-	public:
-		PhoneBook( void );
-		~PhoneBook( void );
-
-		void addContact( void );
-		void printList( void );
-		void search( void );
-
-		
-	private:
-		Contact	contacts[8];
-		static int	_len;
-		static void	printColumn( std::string str );
-};
+HumanA::HumanA( std::string name, Weapon &weapon ) 
+	: _name(name), _weapon(weapon) {}
 
 
+HumanA::~HumanA( void ) {
+	std::cout << this->_name << " died!" << std::endl;
+}
 
-#endif
+void	HumanA::attack( void ) {
+	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+}

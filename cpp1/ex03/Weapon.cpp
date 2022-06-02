@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 08:58:57 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 10:30:50 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/02 10:21:17 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/02 11:47:11 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
+#include "Weapon.hpp"
 
-# define PHONEBOOK_HPP
+Weapon::Weapon( void ) {}
 
-# include "Contact.hpp"
+Weapon::~Weapon( void ) {}
 
-class PhoneBook {
-	
-	public:
-		PhoneBook( void );
-		~PhoneBook( void );
-
-		void addContact( void );
-		void printList( void );
-		void search( void );
-
-		
-	private:
-		Contact	contacts[8];
-		static int	_len;
-		static void	printColumn( std::string str );
-};
+Weapon::Weapon( std::string type ) {
+	this->_type = type;
+}
 
 
+std::string&	Weapon::getType() {
+	return (this->_type);
+}
 
-#endif
+void	Weapon::setType(std::string type) {
+	this->_type = type;
+}
