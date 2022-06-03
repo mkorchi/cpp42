@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 11:54:10 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 18:12:56 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/03 09:32:03 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,9 @@ int	main(int argc, char **argv) {
 			temp = finalString;
 			found = temp.find(s1);
 		}
-		ofs << finalString << std::endl;
+		ofs << finalString;
+		if (!ifs.eof())
+			ofs << std::endl;
 		finalString = "";
 	}
 	ofs.close();

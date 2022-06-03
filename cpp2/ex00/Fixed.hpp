@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 18:14:36 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/03 09:36:32 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/03 12:02:50 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/03 18:55:24 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
+#ifndef FIXED_H
 
-# define HARL_HPP
+# define FIXED_H
 
-# include <string>
 
-class Harl {
+class Fixed
+{
+private:
+	int	_number;
+	static const int _nBits;
+public:
+	Fixed( void );
+	~Fixed( void );
+	Fixed( Fixed const & src );
+	Fixed & operator=( Fixed const & fixed);
 	
-	private:
-		void	_debug(void);
-		void	_info(void);
-		void	_warning(void);
-		void	_error(void);
-	public:
-		Harl( void );
-		~Harl( void );
-		void	complain( std::string  level);
+	int		getRawBits( void ) const;
+	void	setRawBits( int const raw );
 };
-
-
 
 
 #endif
