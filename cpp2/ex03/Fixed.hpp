@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:02:50 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/04 10:57:00 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/04 18:45:21 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
 	int	_value;
 	static const int _nBits;
 public:
+
 	Fixed( void );
 	~Fixed( void );
 	Fixed( Fixed const & src );
@@ -34,6 +35,35 @@ public:
 	void	setRawBits( int const raw );
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
+	
+	bool	operator>( Fixed const & fixed);
+	bool	operator<( Fixed const & fixed);
+	bool	operator>=( Fixed const & fixed);
+	bool	operator<=( Fixed const & fixed);
+	bool	operator==( Fixed const & fixed);
+	bool	operator!=( Fixed const & fixed);
+
+	Fixed	operator+( Fixed const & fixed);
+	Fixed	operator-( Fixed const & fixed);
+	Fixed	operator*( Fixed const & fixed);
+	Fixed	operator/( Fixed const & fixed);
+
+	//PREFIX
+	Fixed &	operator++( void );
+	Fixed &	operator--( void );
+
+	//POSTFIX
+	Fixed	operator++( int );	
+	Fixed	operator--( int );
+
+	static Fixed &	min( Fixed & a, Fixed & b );
+	static const Fixed &	min( Fixed const & a, Fixed const & b );
+
+	static Fixed &	max( Fixed & a, Fixed & b );
+	static const Fixed &	max( Fixed const & a, Fixed const & b );
+
+	
+	
 };
 
 std::ostream &		operator<<( std::ostream & o, Fixed const & i);

@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:50 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/04 10:56:05 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/04 16:53:47 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/04 19:00:33 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-
-# define FIXED_H
+#ifndef POINT_HPP
 
 
-class Fixed
+# define POINT_HPP
+
+#include "Fixed.hpp"
+
+class Point
 {
 private:
-	int	_value;
-	static const int _nBits;
+	Fixed const _x;
+	Fixed const _y;
 public:
-	Fixed( void );
-	~Fixed( void );
-	Fixed( Fixed const & src );
-	Fixed & operator=( Fixed const & fixed);
+	//Orthodox Canonical Form
+	Point( void );
+	~Point( void );
+	Point( Point const & point);
+	Point & operator=( Point const & rhs);
+
+	Point(Fixed const x, Fixed const y);
 	
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
 };
+
 
 
 #endif
