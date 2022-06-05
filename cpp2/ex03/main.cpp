@@ -6,29 +6,23 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/04 16:49:15 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/05 10:43:22 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 #include <iostream>
 
+bool bsp( Point const a, Point const b, Point const c, Point const point);
+
 int		main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	Fixed c( 5 );
-	Fixed d( Fixed( 10 ) - Fixed( 2.0f ) );
-	c = d + b;
-	std::cout << b << std::endl;
-	std::cout << d << std::endl;
-	std::cout << c << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << ++a << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << a++ << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << b << std::endl;
-	// std::cout << Fixed::max( a, b ) << std::endl;
+
+	Point a(Fixed(0), Fixed(5.5f));
+	Point b(Fixed(10), Fixed(5.9f));
+	Point c(Fixed(30), Fixed(45.2f));
+	Point x(Fixed(0), Fixed(0));
+
+	bsp(a, b, c, x);
 
 	return (0);
-}
+}	

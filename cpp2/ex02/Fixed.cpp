@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:03:19 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/04 18:54:20 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/05 09:21:01 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ const int Fixed::_nBits = 8;
 Fixed::Fixed( void ) : _value(0) {
 }
 
-Fixed &	Fixed::operator=( Fixed const & fixed ) {
+Fixed &	Fixed::operator=( Fixed const & rhs ) {
 	
-	if (this != &fixed)
-		this->_value = fixed.getRawBits();
+	if (this != &rhs)
+		this->_value = rhs.getRawBits();
 	return *this;
 }
 

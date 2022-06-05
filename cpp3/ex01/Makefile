@@ -1,8 +1,8 @@
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = point
+NAME = claptrap
 
-SRC = main.cpp Fixed.cpp bsp.cpp Point.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

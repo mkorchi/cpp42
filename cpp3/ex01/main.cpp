@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:50 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/05 09:21:29 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/05 12:26:42 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/05 18:55:32 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
+#include "ScavTrap.hpp"
 
-# define FIXED_H
+int		main( void ) {
+	ScavTrap simo("simo");
 
-
-class Fixed
-{
-private:
-	int	_value;
-	static const int _nBits;
-public:
-	Fixed( void );
-	~Fixed( void );
-	Fixed( Fixed const & src );
-	Fixed & operator=( Fixed const & rhs);
-	
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
-};
+	simo.guardGate();
+	simo.setEnergyPoint(2);
+	simo.attack("sfn");
+	simo.takeDamage(20);
+	simo.beRepaired(10);
+	simo.showStats();
+	simo.attack("ysf");
 
 
-#endif
+	return 0;
+}

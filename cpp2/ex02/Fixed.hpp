@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:02:50 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/04 18:45:21 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/05 09:20:50 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	Fixed( void );
 	~Fixed( void );
 	Fixed( Fixed const & src );
-	Fixed & operator=( Fixed const & fixed);
+	Fixed & operator=( Fixed const & rhs);
 
 	Fixed(const int number);
 	Fixed(const float number);

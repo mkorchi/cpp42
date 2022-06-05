@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:50 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/05 09:21:29 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/05 12:26:42 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/05 13:59:42 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
+#include "ClapTrap.hpp"
 
-# define FIXED_H
+int		main( void ) {
+	ClapTrap	jad("cjad");
+	ClapTrap	zak("zak");
 
-
-class Fixed
-{
-private:
-	int	_value;
-	static const int _nBits;
-public:
-	Fixed( void );
-	~Fixed( void );
-	Fixed( Fixed const & src );
-	Fixed & operator=( Fixed const & rhs);
+	jad.attack("ie-laabb");
+	jad.takeDamage(5);
+	jad.showStats();
+	jad.setAttackDamage(10);
 	
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
-};
+	jad.beRepaired(30);
+	jad.showStats();
 
+	zak.setAttackDamage(200);
+	zak.setEnergyPoint(200);
+	zak.setHitPoint(200);
+	zak.showStats();
 
-#endif
+	zak.attack("cjad");
+
+	return 0;
+}

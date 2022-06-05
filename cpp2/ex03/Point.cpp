@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 16:53:38 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/04 19:00:40 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/05 09:17:32 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,21 @@ Point::Point( Point const & point) {
 
 Point & Point::operator=( Point const & rhs ) {
 	if (this != &rhs) {
-		this->_x = rhs._x;
-		this->_y = rhs._y;
+		const Fixed& xref = this->_x;
+		const Fixed& yref = this->_y;
+		
+		const_cast<Fixed&>(xref) = rhs._x;
+		const_cast<Fixed&>(yref) = rhs._y;
 	}
 	return *this;
+}
+
+Fixed	Point::getX( void ) const {
+	return this->_x;	
+}
+
+Fixed	Point::getY( void ) const {
+	return this->_y;
 }
 
 
