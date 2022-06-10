@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 14:00:35 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/06 19:47:26 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/07 13:08:41 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
+protected:
+	const static unsigned int _initialHP;
+	const static unsigned int _initialEnergy;
+	const static unsigned int _initialAD;
 	
 public:
 	ScavTrap( void );
