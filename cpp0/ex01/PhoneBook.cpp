@@ -6,22 +6,25 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 08:58:46 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 09:03:07 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/10 09:31:14 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
 
-PhoneBook::PhoneBook( void ) {
+PhoneBook::PhoneBook( void )
+{
 	std::cout << "PhoneBook Constructor called" << std::endl;
 }
 
-PhoneBook::~PhoneBook ( void ) {
+PhoneBook::~PhoneBook ( void )
+{
 	std::cout << "PhoneBook Destructor called" << std::endl;
 }
 
-void PhoneBook::addContact() {
+void PhoneBook::addContact()
+{
 	Contact contact;
 	int pos = PhoneBook::_len % 8;
 	
@@ -44,19 +47,24 @@ void PhoneBook::addContact() {
 	PhoneBook::_len++;
 }
 
-void	PhoneBook::printColumn( std::string str ) {
+void	PhoneBook::printColumn( std::string str )
+{
 	std::cout.flags (std::ios::right);
 	std::cout.width(10);
-	if (str.length() > 10) {
+	if (str.length() > 10)
+	{
 		str = str.substr(0, 10);
 		str[9] = '.';
 		std::cout << str << "|";
-	} else {
+	}
+	else
+	{
 		std::cout << str << "|";
 	}
 }
 
-void PhoneBook::printList() {
+void PhoneBook::printList()
+{
 	int	i;
 	
 	PhoneBook::printColumn("index");
@@ -66,7 +74,8 @@ void PhoneBook::printList() {
 	std::cout << std::endl;
 	i = 0;
 	std::cout.flags (std::ios::right);
-	while (i < PhoneBook::_len && i < 8) {
+	while (i < PhoneBook::_len && i < 8)
+	{
 		PhoneBook::printColumn(std::to_string(i));
 		PhoneBook::printColumn(this->contacts[i].firstName);
 		PhoneBook::printColumn(this->contacts[i].lastName);
@@ -76,14 +85,16 @@ void PhoneBook::printList() {
 	}
 }
 
-void PhoneBook::search() {
+void PhoneBook::search()
+{
 	int	i;
 
 	if (PhoneBook::_len == 0)
 		return;
 
 	std::cout << "Enter an index: " << std::endl;
-	while (!(std::cin >> i) || (i < 0 || i > 7)) {
+	while (!(std::cin >> i) || (i < 0 || i > 7))
+	{
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Index you just entered is either wrong or out of range" << std::endl;

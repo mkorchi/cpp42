@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 18:27:47 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 17:39:59 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 18:35:14 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iostream>
+#ifndef ICE_HPP
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
 
-int		main( void ) {
+# define ICE_HPP
+# include "AMateria.hpp"
 
-	Point a(Fixed(0), Fixed(5));
-	Point b(Fixed(10), Fixed(6));
-	Point c(Fixed(30), Fixed(45));
-	Point x(Fixed(0), Fixed(0));
+class Ice : public AMateria
+{
 
-	bsp(a, b, c, x);
+	public:
+		Ice( void );
+		~Ice( void );
+		Ice( Ice const & src);
+		Ice & operator=(Ice const & rhs);
+		AMateria* clone() const;
 
-	return (0);
-}	
+};
+
+
+#endif

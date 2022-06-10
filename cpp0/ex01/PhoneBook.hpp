@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 08:58:57 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 10:30:50 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/10 09:31:28 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 # include "Contact.hpp"
 
-class PhoneBook {
+class PhoneBook
+{
 	
 	public:
 		PhoneBook( void );

@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 17:49:06 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 09:29:03 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 17:43:19 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 17:51:37 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Cure.hpp"
 
-void	put_toupper(char *s)
+Cure::Cure( void ) : AMateria("cure")
 {
-	size_t	i;
-
-	i = 0;
-	while (i < strlen(s))
-	{
-		std::cout << (char) toupper(s[i]);
-		i++;
-	}
+	std::cout << "Cure constructer called" << std::endl;
 }
 
-int	main(int argc, char **argv)
+Cure::~Cure( void )
 {
-	int	i;
+	std::cout << "Cure destructer called" << std::endl;
+}
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	i = 1;
-	while (i < argc)
-	{
-		put_toupper(argv[i]);
-		i++;
-	}
-	std::cout << std::endl;
-	return 0;
+Cure::Cure( Cure const & src)
+{
+	*this = src;
+}
+
+Cure & Cure::operator=(Cure const & rhs)
+{
+	this->_type = rhs.getType();
+	return *this;
+}
+
+AMateria* Cure::clone() const
+{
+	AMateria *clone = new Cure();
+	return (clone);
 }

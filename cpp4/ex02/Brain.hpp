@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 18:27:47 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 14:43:29 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 14:52:52 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iostream>
+#ifndef BRAIN_HPP
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+# define BRAIN_HPP
+# include <iostream>
+# include <string>
 
-int		main( void ) {
+# define SIZE 100
 
-	Point a(Fixed(0), Fixed(5));
-	Point b(Fixed(10), Fixed(6));
-	Point c(Fixed(30), Fixed(45));
-	Point x(Fixed(0), Fixed(0));
+class Brain
+{
+	private:
+		std::string ideas[SIZE];
+	public:
+		Brain( void );
+		~Brain( void );
+		Brain( Brain const & src);
+		Brain & operator=(Brain const & rhs);
+};
 
-	bsp(a, b, c, x);
 
-	return (0);
-}	
+
+
+#endif

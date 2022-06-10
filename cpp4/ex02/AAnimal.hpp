@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 18:27:47 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 15:42:49 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 15:43:26 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iostream>
+#ifndef AANIMAL_HPP
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+# define AANIMAL_HPP
+# include <iostream>
+# include "Brain.hpp"
 
-int		main( void ) {
+class AAnimal
+{
+	protected:
+		std::string _type;
+		
+	public:
+		AAnimal( void );
+		virtual ~AAnimal( void );
+		AAnimal( AAnimal const & src);
+		AAnimal & operator=( AAnimal const & rhs);
 
-	Point a(Fixed(0), Fixed(5));
-	Point b(Fixed(10), Fixed(6));
-	Point c(Fixed(30), Fixed(45));
-	Point x(Fixed(0), Fixed(0));
+		virtual void	makeSound( void ) const = 0;
+		std::string		getType( void ) const;
+		
+};
 
-	bsp(a, b, c, x);
 
-	return (0);
-}	
+#endif

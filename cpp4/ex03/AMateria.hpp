@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 08:57:08 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 09:29:50 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 16:56:22 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 17:35:45 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
+#ifndef AMATERIA_HPP
 
-# define CONTACT_HPP
 
+# define AMATERIA_HPP
 # include <string>
 # include <iostream>
+# include "ICharacter.hpp"
 
-class Contact
+class AMateria
 {
-
+	protected:
+		std::string _type;
 	public:
-		Contact( void );
-		~Contact();
-
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickName;
-		std::string phoneNumber;
-		std::string darkestSecret;
-
-		void displayInfo();
-	
+		AMateria(std::string const & type);
+		AMateria( void );
+		virtual ~AMateria( void );
+		AMateria(AMateria const & src);
+		AMateria & operator=(AMateria const & rhs);
+		std::string const & getType() const;
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
 
-#endif
+
+
+
+#endif 

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 18:27:47 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 17:06:25 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 18:44:47 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iostream>
+#ifndef ICHARACTER_HPP
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+# define ICHARACTER_HPP
 
-int		main( void ) {
+# include "AMateria.hpp"
 
-	Point a(Fixed(0), Fixed(5));
-	Point b(Fixed(10), Fixed(6));
-	Point c(Fixed(30), Fixed(45));
-	Point x(Fixed(0), Fixed(0));
+class ICharacter
+{
 
-	bsp(a, b, c, x);
+	public:
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
+};
 
-	return (0);
-}	
+
+
+
+#endif

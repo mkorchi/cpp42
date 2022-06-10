@@ -5,24 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 18:27:47 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 11:26:45 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 14:41:08 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iostream>
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+int	main( void )
+{
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	delete meta;
+	delete j;
+	delete i;
 
-int		main( void ) {
-
-	Point a(Fixed(0), Fixed(5));
-	Point b(Fixed(10), Fixed(6));
-	Point c(Fixed(30), Fixed(45));
-	Point x(Fixed(0), Fixed(0));
-
-	bsp(a, b, c, x);
-
-	return (0);
-}	
+	// const WrongAnimal *wrong = new WrongCat();
+	// std::cout << wrong->getType() << " " << std::endl;
+	// wrong->makeSound();
+	// delete wrong;
+	
+	return 0;
+}

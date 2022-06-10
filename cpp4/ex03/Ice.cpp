@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 18:27:47 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 17:46:35 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 17:50:14 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iostream>
+#include "Ice.hpp"
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+Ice::Ice( void ) : AMateria("ice")
+{
+	std::cout << "Ice constructer called" << std::endl;
+}
 
-int		main( void ) {
+Ice::~Ice( void )
+{
+	std::cout << "Ice destructer called" << std::endl;
+}
 
-	Point a(Fixed(0), Fixed(5));
-	Point b(Fixed(10), Fixed(6));
-	Point c(Fixed(30), Fixed(45));
-	Point x(Fixed(0), Fixed(0));
+Ice::Ice( Ice const & src)
+{
+	*this = src;
+}
 
-	bsp(a, b, c, x);
+Ice & Ice::operator=(Ice const & rhs)
+{
+	this->_type = rhs.getType();
+	return *this;
+}
 
-	return (0);
-}	
+AMateria* Ice::clone() const
+{
+	AMateria *clone = new Ice();
+	return (clone);
+}

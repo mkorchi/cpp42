@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 09:14:38 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/09 17:09:07 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/10 12:34:26 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,15 @@ void	Harl::_error( void ) {
 
 void	Harl::complain( std::string level ) {
 	typedef void (Harl::*fun)(void);
-	
-	std::pair<std::string[4], fun[4]> myPair;
-	memmove(myPair.first, (std::string[4]){"DEBUG", "INFO", "WARNING", "ERROR"}, 4 * sizeof(std::string));
-	memmove(myPair.second, (fun[4]) {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error}, 4 * sizeof(fun));
-
+	fun f[4] = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
+	std::string actions[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int	i = 0;
 	while (i < 4) {
-		if (myPair.first[i].compare(level) == 0)
+		if (actions[i].compare(level) == 0)
 			break ;
 		i++;
 	}
 	if (i >= 4)
 		return ;
-	(this->*(myPair.second[i]))();
+	(this->*(f[i]))();
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 18:27:47 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 14:27:21 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 14:30:10 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iostream>
+#ifndef WRONG_CAT_HPP
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+# define WRONG_CAT_HPP
 
-int		main( void ) {
+#include "WrongAnimal.hpp"
 
-	Point a(Fixed(0), Fixed(5));
-	Point b(Fixed(10), Fixed(6));
-	Point c(Fixed(30), Fixed(45));
-	Point x(Fixed(0), Fixed(0));
+class WrongCat : public WrongAnimal
+{
+		
+	public:
+		WrongCat( void );
+		~WrongCat( void );
+		WrongCat( WrongCat const & src);
+		WrongCat & operator=( WrongCat const & rhs);
+		void	makeSound( void ) const ;
+};
 
-	bsp(a, b, c, x);
 
-	return (0);
-}	
+#endif

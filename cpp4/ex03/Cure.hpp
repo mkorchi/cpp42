@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 18:27:47 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 17:39:56 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 18:13:59 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iostream>
+#ifndef CURE_HPP
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
 
-int		main( void ) {
+# define CURE_HPP
+# include "AMateria.hpp"
 
-	Point a(Fixed(0), Fixed(5));
-	Point b(Fixed(10), Fixed(6));
-	Point c(Fixed(30), Fixed(45));
-	Point x(Fixed(0), Fixed(0));
+class Cure : public AMateria
+{
 
-	bsp(a, b, c, x);
+	public:
+		Cure( void );
+		~Cure( void );
+		Cure( Cure const & src);
+		Cure & operator=(Cure const & rhs);
+		AMateria* clone() const;
+		
+};
 
-	return (0);
-}	
+
+
+
+
+
+
+#endif

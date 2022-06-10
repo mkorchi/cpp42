@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:02:50 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/05 09:21:29 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/10 18:14:36 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
 	
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );
+
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 18:18:07 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 08:58:11 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/10 09:30:16 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <string>
 #include <iomanip>
 
-int	main() {
+int	main()
+{
 	PhoneBook	phoneBook;
 	std::string	input;
 
@@ -23,16 +24,17 @@ int	main() {
 	{
 		std::cout << "Enter your command (ADD, SEARCH, EXIT)" << std::endl;
 		std::getline(std::cin, input);
-		if (input.compare("ADD") == 0) {
+		if (input.compare("ADD") == 0)
+		{
 			phoneBook.addContact();
 		}
-		else if (input.compare("SEARCH") == 0) {
+		else if (input.compare("SEARCH") == 0)
+		{
 			phoneBook.printList();
 			phoneBook.search();
 		}
-		else if (input.compare("EXIT") == 0) {
+		else if (input.compare("EXIT") == 0)
 			break ;
-		}
 	}
 
 	return 0;

@@ -5,24 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 18:27:47 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/10 11:26:45 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/10 15:30:11 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iostream>
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+int	main( void )
+{
+	Animal *animal[10];
+	for(int i = 0; i < 5; i++)
+		animal[i] = new Dog();
+		
+	for(int i = 5; i < 10; i++)
+		animal[i] = new Cat();
+	
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << animal[i]->getType() << std::endl;
+	}
 
-int		main( void ) {
-
-	Point a(Fixed(0), Fixed(5));
-	Point b(Fixed(10), Fixed(6));
-	Point c(Fixed(30), Fixed(45));
-	Point x(Fixed(0), Fixed(0));
-
-	bsp(a, b, c, x);
-
-	return (0);
-}	
+	// delete dogs and cat directly as animals ==> will call both destructers
+	for(int i = 0; i < 10; i++)
+		delete animal[i];
+	
+	return 0;
+}
