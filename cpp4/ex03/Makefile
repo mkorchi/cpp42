@@ -1,12 +1,12 @@
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = animal
+NAME = game
 
-SRC = main.cpp 
+SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADERS = AMateria.hpp
+HEADERS = AMateria.hpp Character.hpp Cure.hpp Ice.hpp MateriaSource.hpp
 
 all: $(NAME)
 

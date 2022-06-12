@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:26:45 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 16:47:37 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/11 12:41:16 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main( void )
 {
-	//AAnimal *animal = new AAnimal(); <= error, we can't initiate an abstract class
+	//AAnimal *animal = new AAnimal();  //<= error, we can't initiate an abstract class
 	AAnimal *cat = new Cat();
 	AAnimal *dog = new Dog();
 

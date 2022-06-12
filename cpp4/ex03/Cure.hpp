@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 17:39:56 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 18:13:59 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/12 16:15:05 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ class Cure : public AMateria
 
 	public:
 		Cure( void );
-		~Cure( void );
+		virtual ~Cure( void );
 		Cure( Cure const & src);
 		Cure & operator=(Cure const & rhs);
+		
 		AMateria* clone() const;
+		void use(ICharacter& target);
 		
 };
 
