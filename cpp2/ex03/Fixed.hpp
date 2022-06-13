@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:02:50 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/04 18:45:21 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/13 09:02:40 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ public:
 	void	setRawBits( int const raw );
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
+
+	float	toAbsoluteFloat( void ) const;
 	
 	bool	operator>( Fixed const & fixed);
 	bool	operator<( Fixed const & fixed);

@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 18:36:45 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/05 10:51:23 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/13 09:08:47 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,20 @@
 
 
 Fixed	calculateArea(Point const a, Point const b, Point const c) {
-	Fixed 	area;
-	Fixed	sideA((a.getY().toFloat() - c.getY().toFloat()));
-	Fixed	sideB(b.getY().toFloat() - c.getY().toFloat());
-	Fixed	sideC((a.getY().toFloat() - b.getY().toFloat()));
-	
-	area = Fixed((a.getX().toFloat() * sideA.toFloat()
-		+ b.getX().toFloat() * sideB.toFloat()
-		+ c.getY().toFloat() * sideC.toFloat()) / 2);
-	area = Fixed(std::abs(area.toFloat()));
+	Fixed area = (a.getX() * (b.getY() - c.getY()) + b.getX() * (c.getY() - a.getY()) + c.getX() * (a.getY() - b.getY())) / 2;
 	return area;
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const point) {
 	Fixed area = calculateArea(a, b, c);
+	Fixed area2 = calculateArea(point, a, b);
+	Fixed area3 = calculateArea(point, b, c);
+	Fixed area4 = calculateArea(point, a, c);
 
-	std::cout << point.getX() << std::endl;
-	std::cout << area << std::endl;
+	std::cout << area.toAbsoluteFloat() << std::endl;
+
+	if (area.toAbsoluteFloat() == area2.toAbsoluteFloat() + area3.toAbsoluteFloat() + area4.toAbsoluteFloat())
+		return true;
 	return false;
+
 }
