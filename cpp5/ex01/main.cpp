@@ -5,19 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/05 12:26:42 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/14 15:41:40 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/13 07:59:12 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/14 18:08:39 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "Bureaucrat.hpp"
 
-int		main( void ) {
-	DiamondTrap simo("simo");
+int main(void)
+{
+	Form form("form1", 39, 40);
+	
+	Bureaucrat bob("bob", 40);
+	// try 
+	// {	
+	// 	bob.decrementGrade();
+	// }
+	// catch (Bureaucrat::GradeTooLowException& e)
+	// {
+	// 	std::cout << e.whate() << std::endl;
+	// }
+	std::cout << bob << std::endl;
 
-	//simo.showStats();
-	simo.whoAmI();
-	simo.attack("sadf");
-
-	return 0;
+	bob.signForm(form);
+	
 }
