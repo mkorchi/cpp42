@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:55:58 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/16 19:35:05 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/16 21:16:07 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=( ShrubberyCreationForm 
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	if (this->preExecute(executor) == true)
+	if (this->preExecute(executor))
 	{
 		//to do
-		std::cout << "executing e" << std::endl;
+		std::cout << "executing ShrubberyCreationForm" << std::endl;
 	}
 }
 
