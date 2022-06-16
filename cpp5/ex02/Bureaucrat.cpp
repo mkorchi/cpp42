@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 08:03:39 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/14 18:59:00 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/16 19:46:25 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Bureaucrat::~Bureaucrat( void )
 }
 
 Bureaucrat::Bureaucrat( Bureaucrat const & src)
+	: _name(src._name)
 {
 	*this = src;
 }
@@ -94,4 +95,36 @@ void	Bureaucrat::signForm( AForm & form )
 	{
 		std::cout << this->_name << " couldn't sign " << form.getName() << " because grade too low" << std::endl;
 	}
+}
+
+void		Bureaucrat::executeForm(AForm const & form)
+{
+	try 
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	} 
+	catch (Bureaucrat::NotSignedException)
+	{
+		std::cout << "form needs to be signed in order to execute it" << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException)
+	{
+		std::cout << "grade too low to execute form" << std::endl;
+	}
+}
+
+const char * Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Exception: Grade Too Low";
+}
+
+const char * Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Exception: Grade Too High";
+}
+
+const char * Bureaucrat::NotSignedException::what() const throw()
+{
+	return "Exception: not signed";
 }

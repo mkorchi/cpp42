@@ -2,11 +2,11 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = bur
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADERS = Bureaucrat.hpp AForm.hpp
+HEADERS = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp
 
 all: $(NAME)
 

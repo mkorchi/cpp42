@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 08:03:39 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/14 17:21:21 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/16 16:59:18 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Bureaucrat::~Bureaucrat( void )
 }
 
 Bureaucrat::Bureaucrat( Bureaucrat const & src)
+	: _name(src._name)
 {
 	*this = src;
 }
@@ -94,4 +95,14 @@ void	Bureaucrat::signForm( Form & form )
 	{
 		std::cout << this->_name << " couldn't sign " << form.getName() << " because grade too low" << std::endl;
 	}
+}
+
+const char * Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Exception: Grade Too Low";
+}
+
+const char * Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Exception: Grade Too High";
 }

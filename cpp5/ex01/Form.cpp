@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:15:19 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/14 18:01:47 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/16 18:58:44 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,3 +71,14 @@ void		Form::beSigned(Bureaucrat const &	 b)
 		throw Bureaucrat::GradeTooLowException();
 	}
 }
+
+std::ostream &	operator<<( std::ostream & o, Form const & i)
+{
+	std::cout << std::boolalpha;
+	o << "Form name: " << i.getName() << ", ";
+	o << "Signed: " << i.getSigned() <<  ", ";
+	o << "Required grade to sign: " << i.getGradeToSign() <<  ", ";
+	o << "Required grade to execute: " << i.getGradeToExecute();
+	return o;
+}
+

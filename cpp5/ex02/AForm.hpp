@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:56:10 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/14 19:03:09 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/16 19:38:49 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define AFORM_HPP
 # include <string>
 # include <iostream>
+# include <iomanip>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -34,7 +35,7 @@ class AForm
 		AForm(std::string name, int gradeToSign, int gradeToExecute);
 
 		AForm( void );
-		~AForm( void );
+		virtual ~AForm( void );
 		AForm( AForm const & src);
 		AForm & operator=( AForm const & rhs);
 
@@ -46,6 +47,7 @@ class AForm
 
 
 		void		beSigned(Bureaucrat const &	 b);
+		bool		preExecute(Bureaucrat const & executor) const;
 		virtual void execute(Bureaucrat const & executor) const = 0;
 		
 };

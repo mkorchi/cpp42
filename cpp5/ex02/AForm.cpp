@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:56:55 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/14 18:57:18 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/16 19:34:39 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute)
 
 
 AForm::AForm( void )
-	: _name("form1"), _signed(false), _gradeToSign(150), _gradeToExecute(150) {}
+	: _name("form"), _signed(false), _gradeToSign(150), _gradeToExecute(150) {}
 
 
 
@@ -70,4 +70,24 @@ void		AForm::beSigned(Bureaucrat const &	 b)
 	{
 		throw Bureaucrat::GradeTooLowException();
 	}
+}
+
+std::ostream &	operator<<( std::ostream & o, AForm const & i)
+{
+	std::cout << std::boolalpha;
+	o << "Form name: " << i.getName() << ", ";
+	o << "Signed: " << i.getSigned() <<  ", ";
+	o << "Required grade to sign: " << i.getGradeToSign() <<  ", ";
+	o << "Required grade to execute: " << i.getGradeToExecute();
+	return o;
+}
+
+bool		AForm::preExecute(Bureaucrat const & executor) const
+{
+	if (!this->getSigned())
+		throw Bureaucrat::NotSignedException();
+	if (executor.getGrade() <= this->_gradeToExecute)
+		return true;
+	throw Bureaucrat::GradeTooLowException();
+	return false;
 }

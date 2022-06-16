@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sun Jun 12 14:13:47 2022
+# Make data base, printed on Thu Jun 16 19:41:00 2022
 
 # Variables
 
@@ -19,7 +19,6 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 ?F = $(notdir $?)
 # environment
- 
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -40,6 +39,7 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
+ 
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /var/folders/cc/d7r6_1sd27n33wyct4prfyth0000gn/T/vscode-ipc-96bc7d0f-7c42-421d-9f33-c158e56c62d5.sock
@@ -139,7 +139,6 @@ PAGER = less
 LC_ALL = C
 # environment
 SECURITYSESSIONID = 186a8
- 
 # automatic
 ^F = $(notdir $^)
 # default
@@ -161,9 +160,9 @@ VSCODE_PID = 396
 
 # Directories
 
-# . (device 16777221, inode 11655747): 9 files, no impossibilities.
+# . (device 16777221, inode 11765566): 10 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -177,6 +176,7 @@ all:
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -235,6 +235,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sun Jun 12 14:13:47 2022
+# Finished Make data base on Thu Jun 16 19:41:00 2022
 
  

@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 07:59:12 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/13 08:31:31 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/16 16:56:08 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void)
 	}
 	catch (Bureaucrat::GradeTooLowException& e)
 	{
-		std::cout << e.whate() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	Bureaucrat sfn("sfn", 2);
@@ -33,7 +33,7 @@ int main(void)
 	}
 	catch (Bureaucrat::GradeTooHighException& e)
 	{
-		std::cout << e.whate() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	std::cout << sfn << std::endl;
