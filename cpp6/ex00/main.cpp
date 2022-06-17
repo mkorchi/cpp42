@@ -5,32 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 07:59:12 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/17 15:48:49 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/17 16:35:53 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/17 16:45:29 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include <iostream>
 
-int main(void)
+
+int	main( int argc, char **argv)
 {
-	//AForm form("form1", 39, 40); we cant instantiate  Afrom because its abstract
+	if (argc != 2)
+	{
+		std::cout << "too many arguments" << std::endl;
+		return 1;
+	}
+	char	*str = argv[1];
+	
+	char 	resChar;
+	int 	resInt;
+	float resFloat;
+	double resDouble;
+	
+	resInt = atoi(str);
+	std::cout << "int: " << resInt << std::endl;
 
-	//AForm *form = new ShrubberyCreationForm("targert");
-	// AForm *form = new RobotomyRequestForm("targert");
-	AForm *form = new PresidentialPardonForm("targert");
-	
-	Bureaucrat bob("bob", 5);
-	
-	bob.signForm(*form);
-	bob.executeForm(*form);
-	
-	
-	delete form;
-	
-	
 	return 0;
 }

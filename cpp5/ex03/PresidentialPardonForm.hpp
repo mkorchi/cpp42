@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 14:37:54 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/17 13:50:28 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/16 15:12:02 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/16 19:23:31 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
 
-
-# define SHRUBBERYCREATIONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 # include "AForm.hpp"
-# include <fstream>
 
 
-
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	private:
 		std::string _target;
 		
 	public:
-		ShrubberyCreationForm( void );
-		virtual ~ShrubberyCreationForm( void );
-		ShrubberyCreationForm( ShrubberyCreationForm const & src);
-		ShrubberyCreationForm & operator=( ShrubberyCreationForm const & rhs);
+		PresidentialPardonForm( void );
+		virtual ~PresidentialPardonForm( void );
+		PresidentialPardonForm( PresidentialPardonForm const & src);
+		PresidentialPardonForm & operator=( PresidentialPardonForm const & rhs);
 
-		ShrubberyCreationForm( std::string target );
+		PresidentialPardonForm( std::string target );
 		virtual void execute(Bureaucrat const & executor) const;
-
 };
-
 
 
 #endif
