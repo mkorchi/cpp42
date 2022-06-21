@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:56:10 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/16 19:38:49 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/21 03:38:37 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ class AForm
 		
 };
 
-std::ostream &	operator<<( std::ostream o, AForm const & i);
+std::ostream &	operator<<( std::ostream & o, AForm const & i);
 
 
 #endif

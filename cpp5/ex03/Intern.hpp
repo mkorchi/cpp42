@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:50:19 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/17 16:00:02 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/21 03:10:54 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@
 # include "RobotomyRequestForm.hpp"
 
 
-
 class Intern
 {
-	private:
-		std::string forms[3];
+		
 	public:
 		Intern( void );
 		virtual ~Intern( void );
@@ -33,6 +31,11 @@ class Intern
 
 
 		AForm*	makeForm(std::string formName, std::string target);
+
+	private:
+		AForm*	_makeRobotomyRequest( std::string target );
+		AForm*	_makeShrubberyCreation( std::string target );
+		AForm*	_makePresidentialPardon( std::string target );
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 09:14:38 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 12:34:26 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/21 03:01:41 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	Harl::_error( void ) {
 
 void	Harl::complain( std::string level ) {
 	typedef void (Harl::*fun)(void);
+	
 	fun f[4] = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
 	std::string actions[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int	i = 0;

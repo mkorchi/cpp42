@@ -6,18 +6,16 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 16:00:08 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/17 16:06:59 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/21 03:18:49 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "intern.hpp"
+#include "Intern.hpp"
 
 
 Intern::Intern( void )
 {
-	this->forms[0] = "ShrubberyCreation";
-	this->forms[1] = "RobotomyRequestForm";
-	this->forms[2] = "PresidentialPardonForm";
+	
 }
 
 Intern::~Intern( void )
@@ -27,18 +25,43 @@ Intern::~Intern( void )
 
 Intern::Intern( Intern const & src)
 {
-	
+	*this = src;
 }
 
 Intern & Intern::operator=( Intern const & rhs)
 {
-	
+	(void) rhs;
+	return *this;
 }
 
-AForm*	makeForm(std::string formName, std::string target)
+AForm*	Intern::makeForm(std::string formName, std::string target)
 {
-	AForm *form;
+	AForm* (Intern::*fun[4])( std::string ) = {&Intern::_makeShrubberyCreation, &Intern::_makeRobotomyRequest, &Intern::_makePresidentialPardon};
+	std::string forms[4] = {"ShrubberyCreation", "RobotomyRequestForm", "PresidentialPardonForm"};
+	
 
+	for (int i = 0; i < 3; i++)
+	{
+		if (formName == forms[i])
+		{
+			return (this->*(fun[i]))(target);
+		}
+	}
+	std::cout << "Form not found" << std::endl;
+	return (NULL);
+}
 
-	return form;
+AForm*	Intern::_makeRobotomyRequest( std::string target )
+{
+	return new RobotomyRequestForm(target);
+}
+
+AForm*	Intern::_makeShrubberyCreation( std::string target )
+{
+	return new ShrubberyCreationForm(target);
+}
+
+AForm*	Intern::_makePresidentialPardon( std::string target )
+{
+	return new PresidentialPardonForm(target);
 }
