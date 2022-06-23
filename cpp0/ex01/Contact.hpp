@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 08:57:08 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 09:29:50 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/23 16:32:07 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,31 @@
 
 class Contact
 {
-
+	private:
+		std::string	_firstName;
+		std::string	_lastName;
+		std::string	_nickName;
+		std::string _phoneNumber;
+		std::string _darkestSecret;
+	
 	public:
 		Contact( void );
 		~Contact();
+		
+		void		setFirstName( std::string first );
+		std::string	getFirstName( void );
 
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickName;
-		std::string phoneNumber;
-		std::string darkestSecret;
+		void		setLasName( std::string last );
+		std::string	getLastName( void );
+
+		void		setNickName( std::string nick );
+		std::string	getNickName( void );
+
+		void		setPhoneNumber( std::string number );
+		std::string	getPhoneNumber( void );
+
+		void		setDarkestSecret( std::string dark );
+		std::string	getDarkestSecret( void );
 
 		void displayInfo();
 	

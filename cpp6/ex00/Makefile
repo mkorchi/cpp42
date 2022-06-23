@@ -1,12 +1,12 @@
 CFLAGS = -std=c++98
 
-NAME = conversions
+NAME = convert
 
-SRC = main.cpp
+SRC = main.cpp MyConverter.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADERS = main.hpp
+HEADERS = main.hpp MyConverter.hpp
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 08:58:46 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 09:31:14 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/23 16:37:43 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,32 @@ PhoneBook::~PhoneBook ( void )
 
 void PhoneBook::addContact()
 {
-	Contact contact;
+	Contact		contact;
+	std::string temp;
 	int pos = PhoneBook::_len % 8;
 	
 	std::cout << "ENTER FIRST NAME" << std::endl;
-	std::getline(std::cin, contact.firstName);
+	std::getline(std::cin, temp);
+	contact.setFirstName(temp);
+	
 	std::cout << "ENTER LAST NAME" << std::endl;
-	std::getline(std::cin, contact.lastName);
+	std::getline(std::cin, temp);
+	contact.setLasName(temp);
+	
 	std::cout << "ENTER NICKNAME" << std::endl;
-	std::getline(std::cin, contact.nickName);
+	std::getline(std::cin, temp);
+	contact.setNickName(temp);
+	
 	std::cout << "ENTER PHONE NUMBER" << std::endl;
-	std::getline(std::cin, contact.phoneNumber);
+	std::getline(std::cin, temp);
+	contact.setPhoneNumber(temp);
+	
 	std::cout << "ENTER DARKEST SECRET" << std::endl;
-	std::getline(std::cin, contact.darkestSecret);
+	std::getline(std::cin, temp);
+	contact.setDarkestSecret(temp);
 
-	if (contact.firstName.empty() || contact.lastName.empty() || contact.nickName.empty() 
-		|| contact.phoneNumber.empty() || contact.darkestSecret.empty())
+	if (contact.getFirstName().empty() || contact.getLastName().empty() || contact.getNickName().empty() 
+		|| contact.getPhoneNumber().empty() || contact.getDarkestSecret().empty())
 		return;
 
 	this->contacts[pos] = contact;
@@ -77,9 +87,9 @@ void PhoneBook::printList()
 	while (i < PhoneBook::_len && i < 8)
 	{
 		PhoneBook::printColumn(std::to_string(i));
-		PhoneBook::printColumn(this->contacts[i].firstName);
-		PhoneBook::printColumn(this->contacts[i].lastName);
-		PhoneBook::printColumn(this->contacts[i].nickName);
+		PhoneBook::printColumn(this->contacts[i].getFirstName());
+		PhoneBook::printColumn(this->contacts[i].getLastName());
+		PhoneBook::printColumn(this->contacts[i].getNickName());
 		std::cout << std::endl;
 		i++;
 	}
