@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:29:11 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/23 17:49:18 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/24 17:52:06 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # define CONVERTER_HPP
 # include <iostream>
+# include <iomanip>
 # include <ctype.h>
 # include <limits>
 # include <float.h>
@@ -23,7 +24,7 @@ class MyConverter
 {
 	
 	private:
-		std::string const _str;
+		std::string const	_str;
 		MyConverter( void );
 
 	public:
@@ -33,13 +34,13 @@ class MyConverter
 		MyConverter & operator=( MyConverter const & rhs);
 
 		void	fromChar( char c ) const;
-		void	fromInt( int i ) const;
-		void	fromFloat( double f ) const;
+		void	fromInt( long l ) const;
+		void	fromFloat( float f ) const;
 		void	fromDouble( double d ) const;
 
-		void	print( void ) const;
 
-		int		detectType( void) const;
+		void		convert( void) const;
+		std::string	detectType( void ) const;
 };
 
 

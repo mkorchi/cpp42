@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 16:35:53 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/23 14:40:45 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/24 13:04:00 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main( int argc, char **argv)
 	}
 	MyConverter converter(argv[1]);
 
-	converter.detectType();
+	converter.convert();
 
 	return 0;
 }
