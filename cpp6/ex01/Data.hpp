@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 16:35:53 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/26 18:27:44 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/26 21:40:58 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/26 21:50:48 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "MyConverter.hpp"
+#ifndef DATA_HPP
 
 
-int	main( int argc, char **argv)
+# define DATA_HPP
+# include <iostream>
+# include <string>
+
+
+class Data
 {
-	if (argc != 2)
-	{
-		std::cout << "wrong number of arguments" << std::endl;
-		return 1;
-	}
-	MyConverter converter(argv[1]);
-	if (!converter.checkIfValid())
-	{
-		converter.printNaN();
-		return 1;
-	}
-	converter.convert();
+	
+	private:
+		int			_a;
+		std::string _b;
+		
+	public:
+		Data( int a, std::string b);
+		Data( void );
+		~Data( void );
+		Data(Data const & src);
+		Data & operator=(Data const & rhs);
 
-	return 0;
-}
+		int			getA( void );
+		std::string	getB( void );
+};
+
+
+
+#endif

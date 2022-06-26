@@ -5,29 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 16:35:53 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/26 18:27:44 by mkorchi          ###   ########.fr       */
+/*   Created: 2022/06/26 21:32:20 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/06/26 21:52:55 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "MyConverter.hpp"
+#include "Data.hpp"
 
-
-int	main( int argc, char **argv)
+uintptr_t serialize(Data* ptr)
 {
-	if (argc != 2)
-	{
-		std::cout << "wrong number of arguments" << std::endl;
-		return 1;
-	}
-	MyConverter converter(argv[1]);
-	if (!converter.checkIfValid())
-	{
-		converter.printNaN();
-		return 1;
-	}
-	converter.convert();
+	
+}
 
-	return 0;
+Data* deserialize(uintptr_t raw)
+{
+	
+}
+
+int	main( void )
+{
+	Data data(15, "simo");
+
+	data.getA();
+
+
+	return (0);
 }

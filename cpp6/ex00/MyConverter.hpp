@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:29:11 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/26 04:01:45 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/26 18:17:58 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class MyConverter
 		MyConverter & operator=( MyConverter const & rhs);
 
 		void	fromChar( char c ) const;
-		void	fromInt( long l ) const;
+		void	fromInt( int i ) const;
 		void	fromFloat( float f ) const;
 		void	fromDouble( double d ) const;
 
@@ -44,6 +44,7 @@ class MyConverter
 		bool		checkIfValid( void ) const;
 
 		void		printNaN( void ) const;
+		void		printImpossible( void ) const;
 };
 
 
