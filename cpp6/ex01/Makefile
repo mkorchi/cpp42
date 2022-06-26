@@ -2,11 +2,11 @@ CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 NAME = serialize
 
-SRC = main.cpp 
+SRC = main.cpp Data.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADERS = MyConverter.hpp
+HEADERS = Data.hpp
 
 all: $(NAME)
 

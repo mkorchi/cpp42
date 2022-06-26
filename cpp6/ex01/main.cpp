@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 21:32:20 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/26 21:52:55 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/26 23:30:10 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,25 @@
 
 uintptr_t serialize(Data* ptr)
 {
-	
+	return reinterpret_cast<uintptr_t> (ptr);
 }
 
 Data* deserialize(uintptr_t raw)
 {
-	
+	return reinterpret_cast<Data*> (raw);
 }
 
 int	main( void )
 {
-	Data data(15, "simo");
+	Data *data = new Data(123, "simoa");
+	
+	uintptr_t serializedData = serialize(data);
 
-	data.getA();
+	Data *newData = deserialize(serializedData);
 
-
+	std::cout << newData->getA() << std::endl;
+	std::cout << newData->getB() << std::endl;
+	
+	delete newData;
 	return (0);
 }
