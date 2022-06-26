@@ -4,6 +4,8 @@ NAME = violence
 
 SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
+HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -11,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	c++ $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ): $(SRC)
+$(OBJ): $(SRC) $(HEADERS)
 	c++ $(CFLAGS) -c $(SRC)
 
 

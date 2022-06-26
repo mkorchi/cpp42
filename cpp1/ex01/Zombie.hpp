@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 09:55:25 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 11:48:31 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/25 18:20:57 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 
 #include <string>
 
-class Zombie {
+class Zombie
+{
 	private:
 		std::string _name;
+		
 	public:
 		Zombie( void );
 		Zombie( std::string newName );
@@ -29,5 +31,6 @@ class Zombie {
 
 		void	setName(std::string name);
 };
+
 
 #endif

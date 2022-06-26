@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:29:11 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/24 17:52:06 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/26 04:01:45 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ class MyConverter
 
 		void		convert( void) const;
 		std::string	detectType( void ) const;
+		bool		checkIfValid( void ) const;
+
+		void		printNaN( void ) const;
 };
 
 

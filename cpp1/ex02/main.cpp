@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 10:12:04 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 10:17:25 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/25 18:21:31 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	main( void ) {
 	std::cout << myString << std::endl;
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
-	
 
 	return (0);
 }

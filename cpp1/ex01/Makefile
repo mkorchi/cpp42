@@ -4,6 +4,8 @@ NAME = zombieHorde
 
 SRC = main.cpp Zombie.cpp zombieHorde.cpp
 
+HEADERS = Zombie.hpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -11,9 +13,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	c++ $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ): $(SRC)
+$(OBJ): $(SRC) $(HEADERS)
 	c++ $(CFLAGS) -c $(SRC)
-
 
 clean: 
 	rm -f $(OBJ)

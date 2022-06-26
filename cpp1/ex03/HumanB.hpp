@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 10:27:36 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/02 11:46:30 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/25 18:27:09 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include "Weapon.hpp"
 
 
-class HumanB {
+class HumanB
+{
 	private:
 		std::string _name;
 		Weapon *_weapon;

@@ -14,7 +14,6 @@ $(NAME): $(OBJ)
 $(OBJ): $(SRC)
 	c++ $(CFLAGS) -c $(SRC)
 
-
 clean: 
 	rm -f $(OBJ)
 

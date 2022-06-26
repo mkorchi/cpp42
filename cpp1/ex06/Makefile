@@ -4,6 +4,8 @@ NAME = harlFilter
 
 SRC = main.cpp Harl.cpp
 
+HEADERS = Harl.hpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -11,9 +13,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	c++ $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ): $(SRC)
+$(OBJ): $(SRC) $(HEADERS)
 	c++ $(CFLAGS) -c $(SRC)
-
 
 clean: 
 	rm -f $(OBJ)

@@ -6,7 +6,7 @@ SRC = main.cpp MyConverter.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADERS = main.hpp MyConverter.hpp
+HEADERS = MyConverter.hpp
 
 all: $(NAME)
 
