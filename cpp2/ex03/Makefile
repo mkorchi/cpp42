@@ -6,12 +6,14 @@ SRC = main.cpp Fixed.cpp bsp.cpp Point.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
+HEADERS = Fixed.hpp Point.hpp
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	c++ $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ): $(SRC)
+$(OBJ): $(SRC) $(HEADERS)
 	c++ $(CFLAGS) -c $(SRC)
 
 

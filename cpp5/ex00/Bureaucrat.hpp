@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 07:59:23 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/16 16:55:58 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 12:09:01 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Bureaucrat
 	private:
 		std::string const	_name;
 		int					_grade;
+		
 	public:
 		Bureaucrat( std::string name, int grade );
-		
 		
 		Bureaucrat( void );
 		virtual ~Bureaucrat( void );

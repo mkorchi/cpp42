@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 16:53:38 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/16 16:45:55 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/27 15:44:41 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ Point::~Point( void ) { }
 Point::Point( Point const & point) : _x(point._x), _y(point._y) { }
 
 // we can't copy x and y because they are const
-Point & Point::operator=( Point const & rhs ) {
+Point & Point::operator=( Point const & rhs )
+{
 	(void) rhs;
 	return *this;
 }

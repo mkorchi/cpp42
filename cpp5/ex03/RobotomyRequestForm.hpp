@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:08:27 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/17 15:42:16 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 12:44:23 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm & operator=( RobotomyRequestForm const & rhs);
 
 		RobotomyRequestForm( std::string target );
-		virtual void execute(Bureaucrat const & executor) const;
+
+		virtual void concreteExecute( void ) const;
+
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:03:19 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/13 09:07:03 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/27 15:56:17 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 const int Fixed::_nBits = 8;
 
-Fixed::Fixed( void ) : _value(0) {
+Fixed::Fixed( void ) : _value(0)
+{
 }
 
 Fixed &	Fixed::operator=( Fixed const & fixed )

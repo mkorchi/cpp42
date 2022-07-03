@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:56:55 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/16 19:34:39 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 12:43:31 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute)
 	: _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
-{ }
+{
+	if (gradeToSign > 150 || gradeToExecute > 150)
+	{
+		throw Bureaucrat::GradeTooLowException();
+	}
+	else if (gradeToSign < 1 || gradeToExecute < 1)
+	{
+		throw Bureaucrat::GradeTooHighException();
+	}
+}
 
 
 AForm::AForm( void )
@@ -28,7 +37,7 @@ AForm::~AForm( void )
 }
 
 AForm::AForm( AForm const & src)
-	: _name("form"),  _gradeToSign(150), _gradeToExecute(150)
+	: _name("form"),  _gradeToSign(src._gradeToSign), _gradeToExecute(src._gradeToExecute)
 {
 	*this = src;
 }
@@ -82,12 +91,15 @@ std::ostream &	operator<<( std::ostream & o, AForm const & i)
 	return o;
 }
 
-bool		AForm::preExecute(Bureaucrat const & executor) const
+void AForm::execute(Bureaucrat const & executor) const
 {
 	if (!this->getSigned())
 		throw Bureaucrat::NotSignedException();
 	if (executor.getGrade() <= this->_gradeToExecute)
-		return true;
+	{
+		this->concreteExecute();
+		return ;
+	}
 	throw Bureaucrat::GradeTooLowException();
-	return false;
+	return ;
 }

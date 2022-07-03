@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:56:10 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/21 03:38:37 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 12:43:25 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ class AForm
 
 
 		void		beSigned(Bureaucrat const &	 b);
-		bool		preExecute(Bureaucrat const & executor) const;
-		virtual void execute(Bureaucrat const & executor) const = 0;
+		
+		void execute(Bureaucrat const & executor) const;
+		
+		virtual void concreteExecute( void ) const = 0;
 		
 };
 

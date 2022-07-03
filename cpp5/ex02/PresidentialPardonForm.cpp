@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:14:08 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/17 15:47:53 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 12:43:13 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,8 @@ PresidentialPardonForm & PresidentialPardonForm::operator=( PresidentialPardonFo
 	return *this;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+void PresidentialPardonForm::concreteExecute( void ) const
 {
-	if (this->preExecute(executor))
-	{
 		std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-	}
 }
 

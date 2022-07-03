@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:55:58 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/17 14:16:29 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 12:42:55 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,28 +45,26 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=( ShrubberyCreationForm 
 	return *this;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+void ShrubberyCreationForm::concreteExecute( void ) const
 {
-	if (this->preExecute(executor))
+
+	std::cout << this->_target + "_shrubbery has been created." << std::endl;
+	std::ofstream ofs(this->_target + "_shrubbery");
+	if (ofs.fail())
 	{
-		std::cout << this->_target + "_shrubbery has been created." << std::endl;
-		std::ofstream ofs(this->_target + "_shrubbery");
-		if (ofs.fail())
-		{
-			std::cout << strerror(errno) << std::endl;
-			return ;
-		}
-		ofs << "      /\\      " << std::endl;
-		ofs << "     /\\*\\     " << std::endl;
-		ofs << "    /\\O\\*\\    " << std::endl;
-		ofs << "   /*/\\/\\/\\   " << std::endl;
-		ofs << "  /\\O\\/\\*\\/\\  " << std::endl;
-		ofs << " /\\*\\/\\*\\/\\/\\ " << std::endl;
-		ofs << "/\\O\\/\\/*/\\/O/\\" << std::endl;
-		ofs << "      ||      " << std::endl;
-		ofs << "      ||      " << std::endl;
-		ofs << "      ||      " << std::endl;
-		ofs.close();
+		std::cout << strerror(errno) << std::endl;
+		return ;
 	}
+	ofs << "      /\\      " << std::endl;
+	ofs << "     /\\*\\     " << std::endl;
+	ofs << "    /\\O\\*\\    " << std::endl;
+	ofs << "   /*/\\/\\/\\   " << std::endl;
+	ofs << "  /\\O\\/\\*\\/\\  " << std::endl;
+	ofs << " /\\*\\/\\*\\/\\/\\ " << std::endl;
+	ofs << "/\\O\\/\\/*/\\/O/\\" << std::endl;
+	ofs << "      ||      " << std::endl;
+	ofs << "      ||      " << std::endl;
+	ofs << "      ||      " << std::endl;
+	ofs.close();
 }
 

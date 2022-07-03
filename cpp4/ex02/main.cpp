@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:26:45 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/11 12:41:16 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/28 22:16:20 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int	main( void )
 	AAnimal *dog = new Dog();
 
 	std::cout << cat->getType() << std::endl;
+	cat->makeSound();
+
 	std::cout << dog->getType() << std::endl;
+	dog->makeSound();
 
 
 	delete cat;

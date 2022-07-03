@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 16:00:08 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/21 03:18:49 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 13:05:38 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ AForm*	Intern::makeForm(std::string formName, std::string target)
 	{
 		if (formName == forms[i])
 		{
+			std::cout << "Intern creates " << forms[i] << std::endl;
 			return (this->*(fun[i]))(target);
 		}
 	}

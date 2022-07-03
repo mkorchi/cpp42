@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:15:19 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/16 18:58:44 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 11:33:41 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute)
 	: _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
-{ }
+{
+	if (gradeToSign > 150 || gradeToExecute > 150)
+	{
+		throw Bureaucrat::GradeTooLowException();
+	}
+	else if (gradeToSign < 1 || gradeToExecute < 1)
+	{
+		throw Bureaucrat::GradeTooHighException();
+	}
+}
 
 
 Form::Form( void )
 	: _name("form1"), _signed(false), _gradeToSign(150), _gradeToExecute(150) {}
-
 
 
 Form::~Form( void )
@@ -28,7 +36,7 @@ Form::~Form( void )
 }
 
 Form::Form( Form const & src)
-	: _name("form"),  _gradeToSign(150), _gradeToExecute(150)
+	: _name("form"),  _gradeToSign(src._gradeToSign), _gradeToExecute(src._gradeToExecute)
 {
 	*this = src;
 }

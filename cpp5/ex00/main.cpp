@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 07:59:12 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/16 16:56:08 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 12:08:25 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,24 @@ int main(void)
 		std::cout << e.what() << std::endl;
 	}
 
-	Bureaucrat sfn("sfn", 2);
+	Bureaucrat simo("simo", 2);
 	try 
 	{	
-		sfn.incrementGrade();
+		simo.incrementGrade();
 	}
 	catch (Bureaucrat::GradeTooHighException& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << simo << std::endl;
 
-	std::cout << sfn << std::endl;
+	try
+	{
+		Bureaucrat b("someone", 166);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	
 }

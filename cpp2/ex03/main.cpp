@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:02:34 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/13 09:09:26 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/27 15:55:59 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);
 
-int		main( void ) {
+int		main( void )
+{
 
 	Point a(Fixed(0), Fixed(0));
 	Point b(Fixed(20), Fixed(0));

@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:37:54 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/17 13:50:28 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 12:42:50 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm & operator=( ShrubberyCreationForm const & rhs);
 
 		ShrubberyCreationForm( std::string target );
-		virtual void execute(Bureaucrat const & executor) const;
+
+
+		virtual void concreteExecute( void ) const;
 
 };
 

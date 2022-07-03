@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 07:59:12 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/21 03:36:42 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 13:44:22 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 
 int main(void)
 {
-	
+
 	Bureaucrat bob("bob", 5);
 	
-
 	Intern intern;
 	AForm	*form;
 	AForm	*form2;
 	AForm	*form3;
 
-	form = intern.makeForm("ShrubberyCreation", "targer1");
-	form2 = intern.makeForm("RobotomyRequestForm", "targer2");
-	form3 = intern.makeForm("PresidentialPardonForm", "targer3");
+	form = intern.makeForm("ShrubberyCreation", "target1");
+	form2 = intern.makeForm("RobotomyRequestForm", "target2");
+	form3 = intern.makeForm("PresidentialPardonForm", "target3");
+
+	AForm	*def;
+	def = intern.makeForm("invalid", "random"); // def is NULL
 	
 	bob.signForm(*form);
 	bob.executeForm(*form);
