@@ -6,17 +6,17 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 12:26:42 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/05 13:59:42 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/28 16:08:03 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int		main( void ) {
+int		main( void )
+{
 	ClapTrap	jad("cjad");
-	ClapTrap	zak("zak");
 
-	jad.attack("ie-laabb");
+	jad.attack("minion");
 	jad.takeDamage(5);
 	jad.showStats();
 	jad.setAttackDamage(10);
@@ -24,6 +24,8 @@ int		main( void ) {
 	jad.beRepaired(30);
 	jad.showStats();
 
+	
+	ClapTrap	zak("zak");
 	zak.setAttackDamage(200);
 	zak.setEnergyPoint(200);
 	zak.setHitPoint(200);

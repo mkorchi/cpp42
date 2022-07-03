@@ -6,32 +6,38 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 12:20:31 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/05 17:50:07 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/28 17:06:16 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void ) 
-	: _name("unnamed"), _hitPoint(10), _energyPoint(10), _attackDamage(0) {	
+	: _name("unnamed"), _hitPoint(10), _energyPoint(10), _attackDamage(0)
+{	
 	std::cout << "ClapTrap constructer called!" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name ) 
-	: _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0) {	
+	: _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
+{	
 	std::cout << "ClapTrap constructer called!" << std::endl;
 }
 
-ClapTrap::~ClapTrap( void ) {
+ClapTrap::~ClapTrap( void )
+{
 	std::cout << "ClapTrap destructor called!" << std::endl;	
 }
 
-ClapTrap::ClapTrap( ClapTrap const & src) {
+ClapTrap::ClapTrap( ClapTrap const & src)
+{
 	*this = src;
 }
 
-ClapTrap &	ClapTrap::operator=( ClapTrap const & rhs) {
-	if (this != &rhs) {
+ClapTrap &	ClapTrap::operator=( ClapTrap const & rhs)
+{
+	if (this != &rhs)
+	{
 		this->_name = rhs._name;
 		this->_hitPoint = rhs._hitPoint;
 		this->_energyPoint = rhs._energyPoint;
@@ -40,8 +46,10 @@ ClapTrap &	ClapTrap::operator=( ClapTrap const & rhs) {
 	return (*this);
 }
 
-void	ClapTrap::attack(const std::string& target) {
-	if (this->_energyPoint == 0) {
+void	ClapTrap::attack(const std::string& target)
+{
+	if (this->_energyPoint == 0)
+	{
 		std::cout << "ClapTrap " << this->_name << " has 0 eneregy point" << std::endl;
 		return ;
 	}
@@ -52,7 +60,8 @@ void	ClapTrap::attack(const std::string& target) {
 	this->_energyPoint--;
 }
 
-void	ClapTrap::takeDamage(unsigned int amount) {
+void	ClapTrap::takeDamage(unsigned int amount)
+{
 	if (amount > this->_hitPoint)
 		this->_hitPoint = 0;
 	else
@@ -63,8 +72,10 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << std::endl;
 }
 
-void	ClapTrap::beRepaired(unsigned int amount) {
-	if (this->_energyPoint == 0) {
+void	ClapTrap::beRepaired(unsigned int amount)
+{
+	if (this->_energyPoint == 0)
+	{
 		std::cout << "ClapTrap " << this->_name << " has 0 eneregy point" << std::endl;
 		return ;
 	}
@@ -76,7 +87,8 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	this->_energyPoint--;
 }
 
-void	ClapTrap::showStats( void ) {
+void	ClapTrap::showStats( void )
+{
 	std::cout << "------------------------" << std::endl;
 	std::cout << this->_name << std::endl;
 	std::cout << "stats:" << std::endl;
@@ -87,14 +99,17 @@ void	ClapTrap::showStats( void ) {
 }
 
 
-void	ClapTrap::setHitPoint( unsigned int hp) {
+void	ClapTrap::setHitPoint( unsigned int hp)
+{
 	this->_hitPoint = hp;
 }
 
-void	ClapTrap::setEnergyPoint( unsigned int energy) {
+void	ClapTrap::setEnergyPoint( unsigned int energy)
+{
 	this->_energyPoint = energy;
 }
 
-void	ClapTrap::setAttackDamage( unsigned int ad) {
+void	ClapTrap::setAttackDamage( unsigned int ad)
+{
 	this->_attackDamage = ad;
 }

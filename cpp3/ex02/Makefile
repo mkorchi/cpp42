@@ -4,6 +4,8 @@ NAME = fragtrap
 
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
+HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -11,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	c++ $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ): $(SRC)
+$(OBJ): $(SRC) $(HEADERS)
 	c++ $(CFLAGS) -c $(SRC)
 
 

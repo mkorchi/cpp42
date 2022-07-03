@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:53:07 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/10 15:47:44 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/02 13:44:01 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ class Dog : public AAnimal
 		Dog( Dog const & src);
 		Dog & operator=( Dog const & rhs);
 		void	makeSound( void ) const;
+
+		Brain *getBrain( void );
+
 };
 
 

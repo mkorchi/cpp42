@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 17:09:25 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/12 14:44:33 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/02 13:49:26 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ class Character : public ICharacter
 		AMateria	*_materias[4];
 		
 	public:
-		Character( void );
 		Character( std::string name );
+		
+		Character( void );
 		virtual ~Character( void );
 		Character( Character const & src );
 		Character & operator=( Character const & rhs );

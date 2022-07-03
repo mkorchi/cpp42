@@ -6,13 +6,13 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 16:53:38 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/27 15:44:41 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/28 15:55:25 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point(Fixed const x, Fixed const y) : _x(x), _y(y) { }
+Point::Point(float const x, float const y) : _x(x), _y(y) { }
 
 
 Point::Point( void ) : _x(0), _y(0) { }

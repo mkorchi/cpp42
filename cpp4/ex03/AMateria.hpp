@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:56:22 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/12 14:22:57 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/02 13:46:52 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class AMateria
 {
 	protected:
 		std::string _type;
+		
 	public:
 		AMateria(std::string const & type);
 		
@@ -36,8 +37,6 @@ class AMateria
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };
-
-
 
 
 #endif 

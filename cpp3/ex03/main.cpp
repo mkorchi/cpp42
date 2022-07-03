@@ -6,18 +6,26 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 12:26:42 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/14 15:41:40 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/06/28 18:59:31 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-int		main( void ) {
-	DiamondTrap simo("simo");
 
-	//simo.showStats();
-	simo.whoAmI();
+int		main( void )
+{
+
+	
+	DiamondTrap simo("simo");
+	std::cout << "***********************************" << std::endl;
+	simo.showStats();
+	std::cout << "***********************************" << std::endl;
 	simo.attack("sadf");
+	std::cout << "***********************************" << std::endl;
+	simo.whoAmI();
+	std::cout << "***********************************" << std::endl;
+
 
 	return 0;
 }

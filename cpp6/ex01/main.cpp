@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 21:32:20 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/26 23:30:10 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 14:54:07 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ int	main( void )
 
 	std::cout << newData->getA() << std::endl;
 	std::cout << newData->getB() << std::endl;
+
+	if (newData == data)
+	{
+		std::cout << "equal" << std::endl;
+	}
+
+	std::cout << sizeof(data) << std::endl;
 	
 	delete newData;
 	return (0);

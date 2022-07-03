@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:55:12 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/12 19:22:07 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/02 14:06:36 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ int main( void )
 	me->equip(cure);
 	me->equip(cut); // equiping null does nothing
 	
-	me->unequip(1); // unequipping only free the slot and doesnt free the item itself
-	delete cure;
+	me->unequip(1); // unequipping only empty the slot and doesnt free the item itself
+	//delete cure;
+
+	me->equip(cure);
 	
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
@@ -43,5 +45,6 @@ int main( void )
 	delete bob;
 	delete me; // we delete all materia equipped when deleting our character
 	delete src; // we delete all templates when deleting our material source
+
 	return 0;
 }

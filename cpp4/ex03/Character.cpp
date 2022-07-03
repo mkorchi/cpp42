@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 17:14:04 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/12 19:22:35 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/02 14:02:45 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void 	Character::equip(AMateria* m)
 {
 	if (m == NULL)
 		return ;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 4; i++)  // same address already exists, we check for this to avoid double free
 	{
 		if (m == this->_materias[i])
 		{

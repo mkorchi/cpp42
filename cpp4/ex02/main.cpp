@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:26:45 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/28 22:16:20 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/02 13:44:44 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ int	main( void )
 
 	delete cat;
 	delete dog;
-	
 	return 0;
 }

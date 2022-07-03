@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 21:40:58 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/26 21:50:48 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/03 14:44:59 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string>
 
 
-class Data
+struct Data
 {
 	
 	private:

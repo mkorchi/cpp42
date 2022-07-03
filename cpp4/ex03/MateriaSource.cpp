@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 16:52:54 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/12 19:19:57 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/02 14:02:24 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,15 @@ void MateriaSource::learnMateria(AMateria* materia)
 {
     if (materia == NULL)
         return ;
+    for (int i = 0; i < 4; i++)
+	{
+		if (materia == this->_materias[i]) // same address already exists, we check for this to avoid double free
+		{
+			std::cout << "materia already learned " << std::endl;
+			return ;
+		}
+	}
+    
     for (int i = 0; i < 4; i++)
     {
         if (this->_materias[i] == NULL)
