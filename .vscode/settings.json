@@ -68,6 +68,7 @@
 		"__cxx_version": "cpp",
 		"memory_resource": "cpp",
 		"__functional_03": "cpp",
-		"clocale": "cpp"
+		"clocale": "cpp",
+		"*.tpp": "cpp"
 	}
 }

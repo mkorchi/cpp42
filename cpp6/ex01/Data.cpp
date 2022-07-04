@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 21:43:00 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/26 21:52:48 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/04 13:54:01 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ Data::~Data( void )
 
 Data::Data(Data const & src)
 {
-	*this = src;
+	this->_a = src._a;
+	this->_b = src._b;
 }
 
 Data & Data::operator=(Data const & rhs)

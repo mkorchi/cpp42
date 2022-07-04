@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 21:32:20 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/07/03 14:54:07 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/04 14:26:22 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,8 @@ int	main( void )
 	{
 		std::cout << "equal" << std::endl;
 	}
-
-	std::cout << sizeof(data) << std::endl;
 	
 	delete newData;
+
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 21:40:58 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/07/03 14:44:59 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/04 14:32:05 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ struct Data
 		
 	public:
 		Data( int a, std::string b);
+		
 		Data( void );
-		~Data( void );
+		virtual ~Data( void );
 		Data(Data const & src);
 		Data & operator=(Data const & rhs);
 

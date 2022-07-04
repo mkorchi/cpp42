@@ -6,11 +6,28 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 19:51:52 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/28 23:19:30 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/04 21:21:04 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
+
+template < typename T >
+void	fun( T val)
+{
+	std::cout << val << std::endl;
+}
+
+template < typename T>
+void	iter( T arr[], int len, void (*f)( T ))
+{
+	int	i = 0;
+	while (i < len)
+	{
+		f(arr[i]);
+		i++;
+	}
+}
 
 int	main( void )
 {
