@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 08:58:46 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/25 14:08:49 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/08/20 13:42:55 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ void PhoneBook::search()
 
 	if (PhoneBook::_len == 0)
 		return;
-
 	std::cout << "Enter an index: " << std::endl;
 	while (!(std::cin >> i) || (i < 0 || i > 7))
 	{
