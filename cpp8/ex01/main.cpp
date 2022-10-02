@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:05:23 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/10/02 15:24:46 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/10/02 15:30:49 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void    largeNumberTest( void )
 {
+	std::srand(std::time(nullptr));
     Span sp = Span(10000);
 
-	for (int i = -5000; i < 5000; i++)
-		sp.addNumber(i);
-	
+	for (int i = 0; i < 10000; i++)
+		sp.addNumber(std::rand());
 	try
 	{
 		sp.addNumber(5);
@@ -27,19 +27,22 @@ void    largeNumberTest( void )
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << sp[0] << std::endl;
+	std::cout << sp[1] << std::endl;
 	std::cout << "largest Span is " <<  sp.longestSpan() << std::endl;
     std::cout << "shortest Span is " <<  sp.shortestSpan() << std::endl;
 }
 
 void    basicTest( void )
 {
-    Span sp = Span(5);
+    Span sp = Span(8);
     
-    sp.addNumber(6);
+    sp.addNumber(7);
     sp.addNumber(3);
     sp.addNumber(17);
-    sp.addNumber(9);
     sp.addNumber(11);
+    sp.addNumber(-1);
+    sp.addNumber(-15);
     
     try 
     {
@@ -87,9 +90,9 @@ void    AddRangeTest( void )
 int main( void )
 {
     
-    // basicTest();
+    basicTest();
     // AddRangeTest();
-    largeNumberTest();
+    // largeNumberTest();
 
 
     return 0;
