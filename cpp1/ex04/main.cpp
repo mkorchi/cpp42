@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 11:54:10 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/10/02 15:18:12 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/10/02 16:06:12 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,21 @@ int	main(int argc, char **argv) {
 		return (1);
 	}
 	std::string temp;
-	std::string finalString;
+	std::string finalString = "";
 	while (std::getline(ifs, temp)) {
 		std::size_t found;
 		
 		found = temp.find(s1);
-		if (found == std::string::npos)
+		if (found == std::string::npos) {
 			finalString = temp;
-		while (found != std::string::npos) {
-			finalString = temp.substr(0, found);
-			finalString += s2;
-			finalString += temp.substr(found + s1.length());
-			temp = finalString;
-			found = temp.find(s1);
+		} else {
+			while (found != std::string::npos) {
+				finalString += temp.substr(0, found);
+				finalString += s2;
+				temp = temp.substr(found + s1.length());
+				found = temp.find(s1);
+				finalString += temp;
+			}
 		}
 		ofs << finalString;
 		if (!ifs.eof())
