@@ -1,0 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/07 15:13:15 by mkorchi           #+#    #+#             */
+/*   Updated: 2022/07/07 16:40:43 by mkorchi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "MutantStack.hpp"
+
+int	main( void )
+{
+	MutantStack<int> mstack;
+
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	mstack.push(99);
+	mstack.push(41);
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::cout << "=======================" << std::endl;
+	std::stack<int> s(mstack);
+	MutantStack<int>::reverse_iterator b = mstack.rbegin();
+	MutantStack<int>::reverse_iterator e = mstack.rend();
+	while (b != e)
+	{
+		std::cout << *b << std::endl;
+		++b;		
+	}
+	return 0;
+}

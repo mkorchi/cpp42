@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 12:02:10 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/06/26 20:53:06 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/09/05 18:57:47 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ void	MyConverter::fromDouble( double d ) const
 
 	//*************** DOUBLE_CASE ***************
 	
-	if ((d - static_cast<long int> (d)))
+	if ((d - static_cast<long> (d)))
 		std::cout << "double: " << (d) << std::endl;
 	else
 		std::cout << "double: " << (d) << ".0" << std::endl;
