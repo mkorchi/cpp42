@@ -2,6 +2,7 @@ CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 NAME = find
 
+
 SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
