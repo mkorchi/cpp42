@@ -6,7 +6,7 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 08:58:46 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/09/25 22:11:12 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/10/04 20:19:10 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 PhoneBook::PhoneBook( void )
 {
-	std::cout << "PhoneBook Constructor called" << std::endl;
+	// std::cout << "PhoneBook Constructor called" << std::endl;
 }
 
 PhoneBook::~PhoneBook ( void )
 {
-	std::cout << "PhoneBook Destructor called" << std::endl;
+	// std::cout << "PhoneBook Destructor called" << std::endl;
 }
 
 void PhoneBook::addContact()
