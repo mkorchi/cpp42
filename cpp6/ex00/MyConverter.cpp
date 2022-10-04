@@ -6,13 +6,12 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 12:02:10 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/09/05 18:57:47 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/10/04 20:22:40 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MyConverter.hpp"
 #include <math.h>
-
 
 //making default constructer private because we don't need it
 MyConverter::MyConverter( void ) {}
