@@ -1,6 +1,6 @@
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-NAME = convert
+NAME = array
 
 SRC = main.cpp 
 
