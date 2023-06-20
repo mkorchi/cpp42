@@ -6,60 +6,111 @@
 /*   By: mkorchi <mkorchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 16:00:09 by mkorchi           #+#    #+#             */
-/*   Updated: 2022/07/04 21:35:39 by mkorchi          ###   ########.fr       */
+/*   Updated: 2022/07/05 13:37:00 by mkorchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Array.hpp"
 
-#define MAX_VAL 750
+void printCopy(Array<int> numbers)
+{
+    Array<int> copy(numbers);
+    //Array<int> copy;
+    //copy = numbers;
+    
+    unsigned int i = 0;
+    while (i < copy.size())
+    {
+        std::cout << copy[i] << ", ";
+        i++;
+    }
+    std::cout << std::endl;
+}
+
 int main(int, char**)
 {
-    // Array<int> numbers(MAX_VAL);
-    // int* mirror = new int[MAX_VAL];
-    // srand(time(NULL));
-    // for (int i = 0; i < MAX_VAL; i++)
-    // {
-    //     const int value = rand();
-    //     numbers[i] = value;
-    //     mirror[i] = value;
-    // }
-    // //SCOPE
-    // {
-    //     Array<int> tmp = numbers;
-    //     Array<int> test(tmp);
-    // }
+    std::cout << "**************** TEST 1 ****************" << std::endl;
+    // TEST 1
+    {
+        Array<int> numbers(10);
+        std::cout << "size of my array is " << numbers.size() << std::endl;
+        unsigned int i = 0;
+        srand(time(NULL));
+        while (i < numbers.size())
+        {
+            std::cout << numbers[i] << ", ";
+            numbers[i] = rand() % 10;
+            i++;
+        }
+        std::cout << std::endl;
+        i = 0;
+        while (i < numbers.size())
+        {
+            std::cout << numbers[i] << ", ";
+            i++;
+        }
+        std::cout << std::endl;
+        try
+        {
+            std::cout << numbers[-2];
+        }
+        
+        catch (std::exception &e)
+        {
+            std::cerr << e.what() << std::endl;
+        }
+        
+        try
+        {
+            std::cout << numbers[numbers.size()];
+        }
+        catch (std::out_of_range &e)
+        {
+            std::cerr << e.what() << std::endl;
+        }
+        printCopy(numbers);
+    }
 
-    // for (int i = 0; i < MAX_VAL; i++)
-    // {
-    //     if (mirror[i] != numbers[i])
-    //     {
-    //         std::cerr << "didn't save the same value!!" << std::endl;
-    //         return 1;
-    //     }
-    // }
-    // try
-    // {
-    //     numbers[-2] = 0;
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << e.what() << '\n';
-    // }
-    // try
-    // {
-    //     numbers[MAX_VAL] = 0;
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << e.what() << '\n';
-    // }
+    std::cout << "**************** TEST 2 ****************" << std::endl;
+    //TEST 2
+    {
+        Array<std::string> strings(5);
+        unsigned int i = 0;
+        while (i < strings.size())
+        {
+            strings[i] = "hello " + std::to_string(i);
+            i++;
+        }
+        i = 0;
+        while (i < strings.size())
+        {
+            std::cout << "'" << strings[i] << "', ";
+            i++;
+        }
+        std::cout << std::endl;
+    }
 
-    // for (int i = 0; i < MAX_VAL; i++)
-    // {
-    //     numbers[i] = rand();
-    // }
-    // delete [] mirror;//
-    // return 0;
+    //TEST 3
+    std::cout << "**************** TEST 3 ****************" << std::endl;
+    {
+        Array<float> floats(8);
+        unsigned int i = 0;
+        while (i < floats.size())
+        {
+            std::cout << floats[i] << ", ";
+            float randomFloat = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 5));
+            floats[i] = randomFloat;
+            i++;
+        }
+        std::cout << std::endl;
+        i = 0;
+        while (i < floats.size())
+        {
+            std::cout << floats[i] << ", ";
+            i++;
+        }
+        std::cout << std::endl;
+    }
+    return 0;
 }
